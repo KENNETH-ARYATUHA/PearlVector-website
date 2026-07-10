@@ -1,0 +1,41 @@
+
+/* ------------------------------------------------------------------ */
+/* Tailwind directives -- these get expanded into the full utility CSS */
+/* ------------------------------------------------------------------ */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ------------------------------------------------------------------ */
+/* Small set of global, hand-written styles that sit "below" Tailwind */
+/* ------------------------------------------------------------------ */
+html {
+  scroll-behavior: smooth; /* smooth in-page jumps for the nav links */
+}
+
+body {
+  @apply bg-pearl text-ink font-body antialiased;
+}
+
+h1, h2, h3, h4 {
+  @apply font-display;
+}
+
+/* Respect users who have asked their OS to reduce motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Visible keyboard focus ring everywhere (accessibility) */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid #12703F;
+  outline-offset: 3px;
+}
