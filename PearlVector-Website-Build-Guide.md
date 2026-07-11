@@ -306,8 +306,7 @@ Create a new folder `src/data/`, then inside it create a new file called
 
 ```js
 // ------------------------------------------------------------------------
-// Central place for site copy & structured content.
-// Editing THIS file is usually all you need to do to update text across
+// Central place for site copy & st  you need to do to update text across
 // the whole site -- components just map over these arrays.
 // ------------------------------------------------------------------------
 
