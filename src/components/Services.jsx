@@ -1,19 +1,24 @@
-
-import { SERVICES } from "../data/content";
-import Reveal from "./Reveal";
-
+import { useEffect, useState } from "react";
+import * as Icons from "lucide-react";
 
 export default function Services() {
+  const [services, setServices] = useState([]);
+
+  useEffect(() => {
+    fetch(`${import.meta.env.VITE_API_URL}/services`)
+      .then((res) => res.json())
+      .then(setServices);
+  }, []);
+
   return (
     <section id="services" className="bg-pearl py-24">
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
-        {/* Section heading */}
         <div className="mx-auto mb-14 max-w-2xl text-center">
           <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-emerald">
             What We Do
           </p>
           <h2 className="font-display text-3xl font-semibold text-navy sm:text-4xl">
-            One team, ten capabilities
+            One team, many capabilities
           </h2>
           <p className="mt-4 text-ink/70">
             From classrooms to cloud infrastructure, PearlVector builds the
@@ -22,26 +27,28 @@ export default function Services() {
           </p>
         </div>
 
-        {/* Service cards */}
-        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {SERVICES.map(({ icon: Icon, title, description }, i) => (
-            <Reveal key={title} delay={i * 0.06}>
-              <div className="group relative rounded-2xl bg-white p-6 transition-all duration-300 hover:shadow-lg">
-                {/* subtle gradient wash on hover */}
-                <div className="absolute inset-0 bg-brand-gradient opacity-0 transition-opacity duration-300 group-hover:opacity-[0.04]" />
-
-                <div className="relative mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-brand-gradient text-pearl transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3">
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-5">
+          {services.map((service) => {
+            // Look up the icon component by name (e.g. "GraduationCap");
+            // fall back to a generic icon if the name doesn't match one.
+            const Icon = Icons[service.icon_name] || Icons.Sparkles;
+            return (
+              <div
+                key={service.id}
+                className="group rounded-2xl border border-pearl-line bg-white p-6 shadow-card transition-transform hover:-translate-y-1"
+              >
+                <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-brand-gradient text-pearl">
                   <Icon className="h-5 w-5" strokeWidth={1.75} />
                 </div>
-                <h3 className="relative font-display text-base font-semibold text-navy">
-                  {title}
+                <h3 className="font-display text-base font-semibold text-navy">
+                  {service.title}
                 </h3>
-                <p className="relative mt-2 text-sm leading-relaxed text-ink/70">
-                  {description}
+                <p className="mt-2 text-sm leading-relaxed text-ink/70">
+                  {service.description}
                 </p>
               </div>
-            </Reveal>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>

@@ -19,7 +19,7 @@ export default function Hero() {
     if (photos.length < 2) return;
     const interval = setInterval(() => {
       setActiveIndex((i) => (i + 1) % photos.length);
-    }, 4500);
+    }, 6000); // slightly longer so the zoom effect has room to play out
     return () => clearInterval(interval);
   }, [photos]);
 
@@ -28,15 +28,14 @@ export default function Hero() {
       id="home"
       className="relative overflow-hidden bg-navy pt-32 pb-20 text-pearl lg:pt-40 lg:pb-28"
     >
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 overflow-hidden">
         {photos.map((src, i) => (
           <div
             key={src}
-            className="absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ease-in-out"
-            style={{
-              backgroundImage: `url(${src})`,
-              opacity: i === activeIndex ? 1 : 0,
-            }}
+            className={`absolute inset-0 bg-cover bg-top transition-opacity duration-[1500ms] ease-in-out ${
+              i === activeIndex ? "opacity-100 hero-slide-active" : "opacity-0"
+            }`}
+            style={{ backgroundImage: `url(${src})` }}
           />
         ))}
         <div className="absolute inset-0 bg-navy/80" />
