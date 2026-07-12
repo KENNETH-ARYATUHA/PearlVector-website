@@ -28,18 +28,18 @@ export default function Hero() {
       id="home"
       className="relative overflow-hidden bg-navy pt-32 pb-20 text-pearl lg:pt-40 lg:pb-28"
     >
-      <div className="absolute inset-0 overflow-hidden">
-        {photos.map((src, i) => (
-          <div
-            key={src}
-            className={`absolute inset-0 bg-cover bg-top transition-opacity duration-[1500ms] ease-in-out ${
-              i === activeIndex ? "opacity-100 hero-slide-active" : "opacity-0"
-            }`}
-            style={{ backgroundImage: `url(${src})` }}
-          />
-        ))}
-        <div className="absolute inset-0 bg-navy/80" />
-      </div>
+      {photos.map((src, i) => (
+  <div
+    key={src}
+    className={`absolute inset-0 bg-cover transition-opacity duration-[1500ms] ease-in-out ${
+      i === activeIndex ? "opacity-100 hero-slide-active" : "opacity-0"
+    }`}
+    style={{
+      backgroundImage: `url(${src})`,
+      backgroundPosition: "center 25%",
+    }}
+  />
+))}
 
       <div
         className="pointer-events-none absolute inset-0 opacity-30"
