@@ -120,14 +120,14 @@ export const WHY_US = [
 
 // Industries served -- icon + label, mirrors the poster's industry strip.
 export const INDUSTRIES = [
-  { icon: GraduationCap, label: "Education" },
-  { icon: HeartPulse, label: "Healthcare" },
-  { icon: Sprout, label: "Agriculture" },
-  { icon: Building2, label: "Real Estate" },
-  { icon: Landmark, label: "Government" },
-  { icon: Camera, label: "Tourism" },
-  { icon: Bus, label: "Transport" },
-  { icon: Banknote, label: "Finance" },
+  { icon: GraduationCap, label: "Education", description: "School management, e-learning and exam systems." },
+  { icon: HeartPulse, label: "Healthcare", description: "Patient records, telemedicine and health-data platforms." },
+  { icon: Sprout, label: "Agriculture", description: "Farm management, market access and crop analytics tools." },
+  { icon: Building2, label: "Real Estate", description: "Property listings, rentals and smart building management." },
+  { icon: Landmark, label: "Government", description: "Digital public services and e-governance portals." },
+  { icon: Camera, label: "Tourism", description: "Booking platforms and immersive destination experiences." },
+  { icon: Bus, label: "Transport", description: "Fleet tracking, route planning and logistics systems." },
+  { icon: Banknote, label: "Finance", description: "Payments, lending and financial management platforms." },
 ];
 
 // Founding / core team. Update names, roles, or add a `photo` key (an

@@ -22,14 +22,14 @@ export default function Team() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3">
           {team.map((member) => (
             <div key={member.id} className="text-center">
               <PhotoFrame
                 src={member.photo_url}
                 alt={member.name}
                 caption={`${member.name} — ${member.role}`}
-                className="aspect-square w-full"
+                className="aspect-[4/5] w-full"
               />
               <h3 className="mt-4 font-display text-base font-semibold text-navy">
                 {member.name}

@@ -7,17 +7,25 @@ export default function PhotoFrame({
 }) {
   return (
     <div
-      className={`group relative overflow-hidden ${rounded} ${className} shadow-card transition-all duration-500 hover:shadow-2xl hover:shadow-emerald/20 hover:ring-2 hover:ring-emerald/40`}
+      className={`group relative overflow-hidden ${rounded} ${className} bg-navy shadow-card transition-all duration-500 hover:shadow-2xl hover:shadow-emerald/30`}
     >
+      {/* Thin animated accent border that draws in on hover */}
+      <div className="pointer-events-none absolute inset-0 z-20 rounded-2xl ring-1 ring-inset ring-pearl/10 transition-all duration-500 group-hover:ring-2 group-hover:ring-emerald-light/60" />
+
       <img
         src={src}
         alt={alt}
-        className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+        className="h-full w-full object-cover grayscale-[15%] contrast-[1.05] transition-all duration-700 ease-out group-hover:scale-110 group-hover:grayscale-0"
       />
 
+      {/* Subtle brand-color wash, fades out on hover to reveal true photo colors */}
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-navy/40 via-transparent to-emerald/10 mix-blend-multiply transition-opacity duration-500 group-hover:opacity-0" />
+
+      {/* Shimmer sweep */}
       <div className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/10 to-transparent transition-transform duration-1000 ease-out group-hover:translate-x-full" />
 
-      <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-navy-dark/80 via-navy-dark/20 to-transparent opacity-70 transition-opacity duration-500 group-hover:opacity-100" />
+      {/* Bottom gradient + caption */}
+      <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-navy-dark/85 via-navy-dark/20 to-transparent opacity-80 transition-opacity duration-500 group-hover:opacity-100" />
 
       {caption && (
         <div className="absolute inset-x-0 bottom-0 translate-y-2 p-4 opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
