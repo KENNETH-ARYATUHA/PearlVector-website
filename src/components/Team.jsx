@@ -26,10 +26,10 @@ export default function Team() {
           {team.map((member) => (
             <div key={member.id} className="text-center">
               <PhotoFrame
-                src={member.photo_url}
-                alt={member.name}
-                caption={`${member.name} — ${member.role}`}
-                className="aspect-[4/5] w-full"
+                 src={member.photo_url}
+                   alt={member.name}
+                   shape="africa"
+                  className="aspect-[5/4] w-full max-w-[260px] mx-auto"
               />
               <h3 className="mt-4 font-display text-base font-semibold text-navy">
                 {member.name}
