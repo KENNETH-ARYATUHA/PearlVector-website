@@ -14,12 +14,13 @@ export default function PhotoFrame({
     ? {
         WebkitMaskImage: `url(${africaMask})`,
         maskImage: `url(${africaMask})`,
-        WebkitMaskSize: "100% 100%",
-         maskSize: "100% 100%",
-        WebkitMaskRepeat: "no-repeat",
-        maskRepeat: "no-repeat",
+        WebkitMaskSize: "180% 180%",
+        maskSize: "180% 180%",
         WebkitMaskPosition: "center",
         maskPosition: "center",
+        WebkitMaskRepeat: "no-repeat",
+        maskRepeat: "no-repeat",
+      
       }
     : undefined;
 
