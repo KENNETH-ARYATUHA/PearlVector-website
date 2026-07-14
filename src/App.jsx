@@ -15,13 +15,12 @@ import Industries from "./components/Industries";
 import Team from "./components/Team";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
-import AfricaClipDef from "./components/AfricaClipDef";
 // ...other imports
 
 function App() {
   return (
     <div className="min-h-screen">
-      <AfricaClipDef />
+
       <Navbar />
       <main>
         <Hero />

@@ -1,3 +1,5 @@
+import africaMask from "../assets/africa-mask.svg";
+
 export default function PhotoFrame({
   src,
   alt,
@@ -8,12 +10,25 @@ export default function PhotoFrame({
 }) {
   const isAfrica = shape === "africa";
 
+  const maskStyle = isAfrica
+    ? {
+        WebkitMaskImage: `url(${africaMask})`,
+        maskImage: `url(${africaMask})`,
+        WebkitMaskSize: "contain",
+        maskSize: "contain",
+        WebkitMaskRepeat: "no-repeat",
+        maskRepeat: "no-repeat",
+        WebkitMaskPosition: "center",
+        maskPosition: "center",
+      }
+    : undefined;
+
   return (
     <div
       className={`group relative overflow-hidden ${isAfrica ? "" : rounded} ${className} bg-navy transition-all duration-500 ${
         isAfrica ? "" : "shadow-card hover:shadow-2xl hover:shadow-emerald/30"
       }`}
-      style={isAfrica ? { clipPath: "url(#africa-clip)" } : undefined}
+      style={maskStyle}
     >
       {!isAfrica && (
         <div className="pointer-events-none absolute inset-0 z-20 rounded-2xl ring-1 ring-inset ring-pearl/10 transition-all duration-500 group-hover:ring-2 group-hover:ring-emerald-light/60" />
