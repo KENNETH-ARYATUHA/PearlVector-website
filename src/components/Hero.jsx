@@ -19,7 +19,7 @@ export default function Hero() {
     if (photos.length < 2) return;
     const interval = setInterval(() => {
       setActiveIndex((i) => (i + 1) % photos.length);
-    }, 6000); // slightly longer so the zoom effect has room to play out
+    }, 6000);
     return () => clearInterval(interval);
   }, [photos]);
 
@@ -28,18 +28,25 @@ export default function Hero() {
       id="home"
       className="relative overflow-hidden bg-navy pt-32 pb-20 text-pearl lg:pt-40 lg:pb-28"
     >
-      {photos.map((src, i) => (
-  <div
-    key={src}
-    className={`absolute inset-0 bg-cover transition-opacity duration-[1500ms] ease-in-out ${
-      i === activeIndex ? "opacity-100 hero-slide-active" : "opacity-0"
-    }`}
-    style={{
-      backgroundImage: `url(${src})`,
-      backgroundPosition: "center 25%",
-    }}
-  />
-))}
+      {/* Sliding photo background */}
+      <div className="absolute inset-0 overflow-hidden">
+        {photos.map((src, i) => (
+          <div
+            key={src}
+            className={`absolute inset-0 bg-cover transition-opacity duration-[1500ms] ease-in-out ${
+              i === activeIndex ? "opacity-100 hero-slide-active" : "opacity-0"
+            }`}
+            style={{
+              backgroundImage: `url(${src})`,
+              backgroundPosition: "center 25%",
+            }}
+          />
+        ))}
+
+        {/* Dark overlay so text stays readable over any photo, brightest or not */}
+        <div className="absolute inset-0 bg-navy/90" />
+        <div className="absolute inset-0 bg-gradient-to-b from-navy/70 via-navy/85 to-navy/95" />
+      </div>
 
       <div
         className="pointer-events-none absolute inset-0 opacity-30"
@@ -56,12 +63,12 @@ export default function Hero() {
           Digital Solutions for Africa
         </p>
 
-        <h1 className="font-display text-4xl font-semibold leading-tight sm:text-5xl lg:text-6xl">
+        <h1 className="font-display text-4xl font-semibold leading-tight sm:text-5xl lg:text-6xl drop-shadow-[0_2px_12px_rgba(0,0,0,0.5)]">
           Empowering Africa through{" "}
           <span className="text-emerald-light">innovative digital</span> solutions
         </h1>
 
-        <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-pearl/80">
+        <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-pearl/90 drop-shadow-[0_1px_8px_rgba(0,0,0,0.4)]">
           PearlVector is a technology company delivering innovative, reliable
           and affordable digital solutions that solve real African challenges
           and drive growth, efficiency and transformation.
@@ -75,6 +82,7 @@ export default function Hero() {
             Let's Build Together
             <ArrowRight className="h-4 w-4" />
           </a>
+
           <a
             href="#services"
             className="inline-flex items-center gap-2 rounded-full border border-pearl/30 px-6 py-3 text-sm font-semibold text-pearl transition-colors hover:bg-pearl/10"
