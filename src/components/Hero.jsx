@@ -44,10 +44,8 @@ export default function Hero() {
         ))}
 
         {/* Dark overlay so text stays readable over any photo, brightest or not */}
-        <div className="absolute inset-0 bg-navy/90" />
-        <div className="absolute inset-0 bg-gradient-to-b from-navy/70 via-navy/85 to-navy/95" />
-      </div>
-
+        <div className="absolute inset-0 bg-navy/45" />
+        <div className="absolute inset-0 bg-gradient-to-b from-navy/20 via-navy/45 to-navy/65" />
       <div
         className="pointer-events-none absolute inset-0 opacity-30"
         style={{
@@ -57,6 +55,8 @@ export default function Hero() {
         }}
         aria-hidden="true"
       />
+
+      </div>
 
       <div className="relative mx-auto max-w-4xl px-6 text-center lg:px-10">
         <p className="mb-4 inline-block rounded-full border border-emerald-light/40 bg-emerald/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-emerald-light">
