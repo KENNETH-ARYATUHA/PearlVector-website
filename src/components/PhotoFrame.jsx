@@ -14,8 +14,8 @@ export default function PhotoFrame({
     ? {
         WebkitMaskImage: `url(${africaMask})`,
         maskImage: `url(${africaMask})`,
-        WebkitMaskSize: "180% 180%",
-        maskSize: "180% 180%",
+        WebkitMaskSize: "135% 135%",
+        maskSize: "135% 135%",
         WebkitMaskPosition: "center",
         maskPosition: "center",
         WebkitMaskRepeat: "no-repeat",
