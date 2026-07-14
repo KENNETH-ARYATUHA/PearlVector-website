@@ -29,7 +29,7 @@ export default function Team() {
                  src={member.photo_url}
                      alt={member.name}
                    shape="africa"
-                 className="aspect-[3/2] w-full max-w-[320px] mx-auto"
+                 className="aspect-[542/494] w-full max-w-[300px] mx-auto"
                />
               <h3 className="mt-4 font-display text-base font-semibold text-navy">
                 {member.name}
