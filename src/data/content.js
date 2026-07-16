@@ -36,6 +36,7 @@ export const NAV_LINKS = [
   { label: "Industries", href: "#industries" },
   { label: "Team", href: "#team" },
   { label: "Contact", href: "#contact" },
+  { label: "Blog", href: "/blog" },
 ];
 
 // The four "trust pill" badges shown under the hero.

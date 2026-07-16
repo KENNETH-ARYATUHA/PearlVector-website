@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { NAV_LINKS } from "../data/content";
+import { Link } from "react-router-dom";
 import logo from "../assets/images/logo.jpg";
 
 export default function Navbar() {
@@ -44,19 +45,29 @@ export default function Navbar() {
 </a>
 
         {/* Desktop nav links */}
-        <ul className="hidden items-center gap-8 lg:flex">
-          {NAV_LINKS.map((link) => (
-            <li key={link.href}>
-              <a
-                href={link.href}
-                className="group relative text-sm font-medium text-navy/80 transition-colors hover:text-emerald"
-              >
-                {link.label}
-                <span className="absolute -bottom-1 left-0 h-[2px] w-0 bg-emerald transition-all duration-300 group-hover:w-full" />
-              </a>
-            </li>
-          ))}
-        </ul>
+<ul className="hidden items-center gap-8 lg:flex">
+  {NAV_LINKS.map((link) => (
+    <li key={link.href}>
+      {link.href.startsWith("/") ? (
+        <Link
+          to={link.href}
+          className="group relative text-sm font-medium text-navy/80 transition-colors hover:text-emerald"
+        >
+          {link.label}
+          <span className="absolute -bottom-1 left-0 h-[2px] w-0 bg-emerald transition-all duration-300 group-hover:w-full" />
+        </Link>
+      ) : (
+        
+          href={link.href}
+          className="group relative text-sm font-medium text-navy/80 transition-colors hover:text-emerald"
+        >
+          {link.label}
+          <span className="absolute -bottom-1 left-0 h-[2px] w-0 bg-emerald transition-all duration-300 group-hover:w-full" />
+        </a>
+      )}
+    </li>
+  ))}
+</ul>
 
         {/* Desktop CTA button */}
         <a
