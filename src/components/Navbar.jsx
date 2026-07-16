@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+﻿import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { NAV_LINKS } from "../data/content";
@@ -43,18 +43,12 @@ export default function Navbar() {
           {NAV_LINKS.map((link) => (
             <li key={link.href}>
               {link.href.startsWith("/") ? (
-                <Link
-                  to={link.href}
-                  className="group relative text-sm font-medium text-navy/80 transition-colors hover:text-emerald"
-                >
+                <Link to={link.href} className="group relative text-sm font-medium text-navy/80 transition-colors hover:text-emerald">
                   {link.label}
                   <span className="absolute -bottom-1 left-0 h-[2px] w-0 bg-emerald transition-all duration-300 group-hover:w-full" />
                 </Link>
               ) : (
-                
-                  href={link.href}
-                  className="group relative text-sm font-medium text-navy/80 transition-colors hover:text-emerald"
-                >
+                <a href={link.href} className="group relative text-sm font-medium text-navy/80 transition-colors hover:text-emerald">
                   {link.label}
                   <span className="absolute -bottom-1 left-0 h-[2px] w-0 bg-emerald transition-all duration-300 group-hover:w-full" />
                 </a>
@@ -63,10 +57,7 @@ export default function Navbar() {
           ))}
         </ul>
 
-        
-          href="#contact"
-          className="hidden rounded-full bg-brand-gradient px-5 py-2.5 text-sm font-semibold text-pearl shadow-card transition-all duration-300 hover:scale-[1.05] hover:shadow-lg hover:shadow-emerald/30 lg:inline-block"
-        >
+        <a href="#contact" className="hidden rounded-full bg-brand-gradient px-5 py-2.5 text-sm font-semibold text-pearl shadow-card transition-all duration-300 hover:scale-[1.05] hover:shadow-lg hover:shadow-emerald/30 lg:inline-block">
           Let's Talk
         </a>
 
@@ -86,30 +77,18 @@ export default function Navbar() {
             {NAV_LINKS.map((link) => (
               <li key={link.href}>
                 {link.href.startsWith("/") ? (
-                  <Link
-                    to={link.href}
-                    onClick={closeMenu}
-                    className="block rounded-md px-3 py-2.5 text-sm font-medium text-navy hover:bg-pearl-dim"
-                  >
+                  <Link to={link.href} onClick={closeMenu} className="block rounded-md px-3 py-2.5 text-sm font-medium text-navy hover:bg-pearl-dim">
                     {link.label}
                   </Link>
                 ) : (
-                  
-                    href={link.href}
-                    onClick={closeMenu}
-                    className="block rounded-md px-3 py-2.5 text-sm font-medium text-navy hover:bg-pearl-dim"
-                  >
+                  <a href={link.href} onClick={closeMenu} className="block rounded-md px-3 py-2.5 text-sm font-medium text-navy hover:bg-pearl-dim">
                     {link.label}
                   </a>
                 )}
               </li>
             ))}
             <li className="pt-2">
-              
-                href="#contact"
-                onClick={closeMenu}
-                className="block rounded-full bg-brand-gradient px-4 py-2.5 text-center text-sm font-semibold text-pearl"
-              >
+              <a href="#contact" onClick={closeMenu} className="block rounded-full bg-brand-gradient px-4 py-2.5 text-center text-sm font-semibold text-pearl">
                 Let's Talk
               </a>
             </li>
