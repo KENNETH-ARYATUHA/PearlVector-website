@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+﻿import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Services from "./components/Services";
@@ -11,6 +11,7 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import BlogList from "./pages/BlogList";
 import BlogPost from "./pages/BlogPost";
+import ScrollToHash from "./components/ScrollToHash";
 
 function HomePage() {
   return (
@@ -30,6 +31,7 @@ function HomePage() {
 function App() {
   return (
     <BrowserRouter>
+      <ScrollToHash />
       <div className="min-h-screen">
         <Navbar />
         <Routes>
