@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+﻿import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { NAV_LINKS } from "../data/content";
 import logo from "../assets/images/logo.jpg";
 
@@ -11,6 +12,8 @@ export default function Footer() {
       .then((res) => res.json())
       .then(setContact);
   }, []);
+
+  const linkTo = (href) => (href.startsWith("/") ? href : `/${href}`);
 
   return (
     <footer className="bg-navy-dark py-14 text-pearl/80">
@@ -27,7 +30,7 @@ export default function Footer() {
               </div>
             </div>
             <p className="mt-4 max-w-xs text-sm leading-relaxed">
-              Digital solutions for Africa — innovative, reliable and affordable technology that drives real transformation.
+              Digital solutions for Africa - innovative, reliable and affordable technology that drives real transformation.
             </p>
           </div>
 
@@ -36,7 +39,7 @@ export default function Footer() {
             <ul className="space-y-2 text-sm">
               {NAV_LINKS.map((link) => (
                 <li key={link.href}>
-                  <a href={link.href} className="hover:text-emerald-light">{link.label}</a>
+                  <Link to={linkTo(link.href)} className="hover:text-emerald-light">{link.label}</Link>
                 </li>
               ))}
             </ul>
@@ -49,7 +52,6 @@ export default function Footer() {
               {contact.contact_email && <li>{contact.contact_email}</li>}
               {contact.contact_location && <li>{contact.contact_location}</li>}
             </ul>
-
             <div className="mt-5 flex flex-wrap gap-3">
               {contact.social_x && (
                 <a href={`https://x.com/${contact.social_x.replace("@", "")}`} className="text-xs hover:text-emerald-light">
@@ -66,7 +68,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-10 border-t border-pearl/10 pt-6 text-center text-xs text-pearl/50">
-          © {year} PearlVector. All rights reserved.
+          (c) {year} PearlVector. All rights reserved.
         </div>
       </div>
     </footer>
