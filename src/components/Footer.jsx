@@ -1,4 +1,4 @@
-﻿import { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { NAV_LINKS } from "../data/content";
 import logo from "../assets/images/logo.jpg";
@@ -61,6 +61,21 @@ export default function Footer() {
               {contact.social_whatsapp && (
                 <a href={`https://wa.me/${contact.social_whatsapp.replace(/[^0-9]/g, "")}`} className="text-xs hover:text-emerald-light">
                   WhatsApp: {contact.social_whatsapp}
+                </a>
+              )}
+              {contact.social_facebook && (
+                <a href={contact.social_facebook} target="_blank" rel="noopener noreferrer" className="text-xs hover:text-emerald-light">
+                  Facebook
+                </a>
+              )}
+              {contact.social_linkedin && (
+                <a href={contact.social_linkedin} target="_blank" rel="noopener noreferrer" className="text-xs hover:text-emerald-light">
+                  LinkedIn
+                </a>
+              )}
+              {contact.social_instagram && (
+                <a href={contact.social_instagram} target="_blank" rel="noopener noreferrer" className="text-xs hover:text-emerald-light">
+                  Instagram
                 </a>
               )}
             </div>
