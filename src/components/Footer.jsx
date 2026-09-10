@@ -2,6 +2,15 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { NAV_LINKS } from "../data/content";
 import logo from "../assets/images/logo.jpg";
+import {
+  FaFacebook,
+  FaInstagram,
+  FaLinkedin,
+  FaYoutube,
+  FaTiktok,
+  FaXTwitter,
+  FaWhatsapp,
+} from "react-icons/fa6";
 
 export default function Footer() {
   const [contact, setContact] = useState({});
@@ -52,30 +61,40 @@ export default function Footer() {
               {contact.contact_email && <li>{contact.contact_email}</li>}
               {contact.contact_location && <li>{contact.contact_location}</li>}
             </ul>
-            <div className="mt-5 flex flex-wrap gap-3">
+            <div className="mt-5 flex flex-wrap items-center gap-4">
               {contact.social_x && (
-                <a href={`https://x.com/${contact.social_x.replace("@", "")}`} className="text-xs hover:text-emerald-light">
-                  X: {contact.social_x}
+                <a href={`https://x.com/${contact.social_x.replace("@", "")}`} aria-label="X (Twitter)" className="hover:text-emerald-light">
+                  <FaXTwitter size={18} />
                 </a>
               )}
               {contact.social_whatsapp && (
-                <a href={`https://wa.me/${contact.social_whatsapp.replace(/[^0-9]/g, "")}`} className="text-xs hover:text-emerald-light">
-                  WhatsApp: {contact.social_whatsapp}
+                <a href={`https://wa.me/${contact.social_whatsapp.replace(/[^0-9]/g, "")}`} aria-label="WhatsApp" className="hover:text-emerald-light">
+                  <FaWhatsapp size={18} />
                 </a>
               )}
               {contact.social_facebook && (
-                <a href={contact.social_facebook} target="_blank" rel="noopener noreferrer" className="text-xs hover:text-emerald-light">
-                  Facebook
+                <a href={contact.social_facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="hover:text-emerald-light">
+                  <FaFacebook size={18} />
                 </a>
               )}
               {contact.social_linkedin && (
-                <a href={contact.social_linkedin} target="_blank" rel="noopener noreferrer" className="text-xs hover:text-emerald-light">
-                  LinkedIn
+                <a href={contact.social_linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="hover:text-emerald-light">
+                  <FaLinkedin size={18} />
                 </a>
               )}
               {contact.social_instagram && (
-                <a href={contact.social_instagram} target="_blank" rel="noopener noreferrer" className="text-xs hover:text-emerald-light">
-                  Instagram
+                <a href={contact.social_instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="hover:text-emerald-light">
+                  <FaInstagram size={18} />
+                </a>
+              )}
+              {contact.social_youtube && (
+                <a href={contact.social_youtube} target="_blank" rel="noopener noreferrer" aria-label="YouTube" className="hover:text-emerald-light">
+                  <FaYoutube size={18} />
+                </a>
+              )}
+              {contact.social_tiktok && (
+                <a href={contact.social_tiktok} target="_blank" rel="noopener noreferrer" aria-label="TikTok" className="hover:text-emerald-light">
+                  <FaTiktok size={18} />
                 </a>
               )}
             </div>
