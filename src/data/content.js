@@ -110,6 +110,19 @@ export const SERVICES = [
     description:
       "Helping organizations digitize processes, modernize workflows, and achieve operational excellence.",
   },
+    {
+    icon: MessagesSquare,
+    title: "Digital Consulting",
+    description:
+      "Helping organizations digitize processes, modernize workflows, and achieve operational excellence.",
+  },
+  {
+    icon: Cpu,
+    title: "Hardware",
+    description:
+      "Computer and network hardware supply, installation, and maintenance — from workstations and servers to structured cabling and IoT devices.",
+  },
+];
 ];
 
 // "Why Choose PearlVector" checklist.
