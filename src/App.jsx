@@ -1,4 +1,4 @@
-﻿import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Services from "./components/Services";
@@ -12,10 +12,16 @@ import Footer from "./components/Footer";
 import BlogList from "./pages/BlogList";
 import BlogPost from "./pages/BlogPost";
 import ScrollToHash from "./components/ScrollToHash";
+import Seo from "./components/Seo";
 
 function HomePage() {
   return (
     <main>
+      <Seo
+        title="Home"
+        description="PearlVector is a technology company delivering innovative, reliable and affordable digital solutions — AI, software, mobile apps, cybersecurity, cloud and more — that solve real African challenges."
+        path="/"
+      />
       <Hero />
       <Services />
       <WhyUs />
