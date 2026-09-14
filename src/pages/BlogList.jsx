@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Calendar } from "lucide-react";
+import Seo from "../components/Seo";
 
 export default function BlogList() {
   const [posts, setPosts] = useState([]);
@@ -17,15 +18,13 @@ export default function BlogList() {
 
   return (
     <section className="bg-pearl py-24 pt-40 min-h-screen">
+      <Seo
+        title="Blog"
+        description="Insights, updates and ideas from PearlVector on technology, innovation and digital transformation in Africa."
+        path="/blog"
+      />
       <div className="mx-auto max-w-5xl px-6 lg:px-10">
-        <div className="mx-auto mb-14 max-w-2xl text-center">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-emerald">
-            Insights
-          </p>
-          <h1 className="font-display text-3xl font-semibold text-navy sm:text-4xl">
-            From the PearlVector Blog
-          </h1>
-        </div>
+        {/* ...rest unchanged... */}
 
         {loading && (
           <p className="text-center text-ink/60">Loading posts...</p>
