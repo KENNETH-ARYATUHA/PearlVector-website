@@ -1,5 +1,3 @@
-import { Helmet } from "react-helmet-async";
-
 const SITE_NAME = "PearlVector";
 const SITE_URL = "https://pearlvector.com";
 const DEFAULT_IMAGE = `${SITE_URL}/og-image.jpg`;
@@ -12,7 +10,7 @@ export default function Seo({ title, description, path = "", image }) {
   const ogImage = image || DEFAULT_IMAGE;
 
   return (
-    <Helmet>
+    <>
       <title>{fullTitle}</title>
       <meta name="description" content={description} />
       <link rel="canonical" href={url} />
@@ -28,6 +26,6 @@ export default function Seo({ title, description, path = "", image }) {
       <meta name="twitter:title" content={fullTitle} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={ogImage} />
-    </Helmet>
+    </>
   );
 }
