@@ -9,7 +9,7 @@ export default function Services() {
             What We Do
           </p>
           <h2 className="font-display text-3xl font-semibold text-navy sm:text-4xl">
-            One team, ten capabilities
+            One team, Numerous capabilities
           </h2>
           <p className="mt-4 text-ink/70">
             From classrooms to cloud infrastructure, PearlVector builds the
