@@ -2,6 +2,13 @@ import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { ArrowLeft, Calendar } from "lucide-react";
 import Seo from "../components/Seo";
+
+function makeExcerpt(text, maxLength = 155) {
+  if (!text) return "";
+  const clean = text.replace(/\s+/g, " ").trim();
+  return clean.length > maxLength ? `${clean.slice(0, maxLength).trim()}…` : clean;
+}
+
 export default function BlogPost() {
   const { slug } = useParams();
   const [post, setPost] = useState(null);
@@ -35,6 +42,7 @@ export default function BlogPost() {
   if (notFound) {
     return (
       <section className="min-h-screen bg-pearl pt-40 pb-24 text-center">
+        <Seo title="Post not found" description="This blog post could not be found." path={`/blog/${slug}`} />
         <p className="text-ink/60">Post not found.</p>
         <Link to="/blog" className="mt-4 inline-block text-emerald hover:underline">
           ← Back to blog
@@ -45,6 +53,12 @@ export default function BlogPost() {
 
   return (
     <article className="min-h-screen bg-pearl pt-40 pb-24">
+      <Seo
+        title={post.title}
+        description={makeExcerpt(post.content)}
+        path={`/blog/${post.slug}`}
+        image={post.cover_image_url}
+      />
       <div className="mx-auto max-w-3xl px-6 lg:px-10">
         <Link
           to="/blog"
