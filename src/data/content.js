@@ -25,6 +25,7 @@ import {
   Landmark,
   Camera,
   Bus,
+  Cpu,
   Banknote,
 } from "lucide-react";
 
