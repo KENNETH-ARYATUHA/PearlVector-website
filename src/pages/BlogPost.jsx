@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { ArrowLeft, Calendar } from "lucide-react";
-
+import Seo from "../components/Seo";
 export default function BlogPost() {
   const { slug } = useParams();
   const [post, setPost] = useState(null);
