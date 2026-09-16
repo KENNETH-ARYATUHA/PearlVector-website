@@ -114,7 +114,7 @@ export const SERVICES = [
     icon: Cpu,
     title: "Hardware",
     description:
-      "Computer and network hardware supply, installation, and maintenance — from workstations and servers to structured cabling and IoT devices.",
+      "Computer and network hardware supply, installation, and maintenance from workstations and servers to structured cabling and IoT devices.",
   },
 ];
 
